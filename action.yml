@@ -1,0 +1,15 @@
+name: is-in-orgs
+description: >
+  Passes if the user who initiated this action belongs to one or more of the
+  orgs provided in the input.
+inputs:
+  orgs:
+    description: >
+      A space-delimited list of orgs that this user may belong to in order for
+      this action to pass.
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.orgs }}
