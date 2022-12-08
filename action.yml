@@ -8,6 +8,10 @@ inputs:
       A space-delimited list of orgs that this user may belong to in order for
       this action to pass.
     required: true
+outputs:
+  in_orgs:
+    description: >
+      A boolean value indicating if the user belongs to any of the input orgs.
 runs:
   using: docker
   image: Dockerfile
