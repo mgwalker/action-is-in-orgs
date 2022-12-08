@@ -14,10 +14,10 @@ jobs:
     steps:
       - name: check org membership
         id: org-check
-        uses: mgwalker/action-is-in-orgs@2.0
+        uses: mgwalker/action-is-in-orgs@v2.0.1
         with:
           orgs: org1 org2 org3
-     - if: ${{ steps.org-check.in_orgs == "true" }}
+     - if: ${{ steps.org-check.in_orgs == 'true' }}
        name: do a thing
        run: "my next command"
 ```
