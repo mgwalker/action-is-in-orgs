@@ -36,8 +36,10 @@ jobs:
 
 ## Version history
 
-- **2.0**
+- **2.0.1**
   - no longer fails if the user/bot/entity that initiated the action is not a
     member of one of the specified orgs
   - adds a boolean output indicating whether they belong to the org
+- **2.0**
+  - we do not talk about 2.0
 - **1.0** - Initial release. Nothing has changed yet!
