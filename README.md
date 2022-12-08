@@ -13,9 +13,13 @@ jobs:
     name: the job I'm running
     steps:
       - name: check org membership
-        uses: mgwalker/action-is-in-orgs@1.0
+        id: org-check
+        uses: mgwalker/action-is-in-orgs@2.0
         with:
           orgs: org1 org2 org3
+     - if: ${{ steps.org-check.in_orgs == "true" }}
+       name: do a thing
+       run: "my next command"
 ```
 
 #### Parameters
@@ -24,6 +28,16 @@ jobs:
 |---|---|
 |`orgs`|A space-delimited list of organizations to check against. **Required**
 
+#### Outputs
+
+|name|description|
+|---|---|
+|`in_orgs`|A boolean indicating whether the user is a member of any of the specified orgs.
+
 ## Version history
 
+- **2.0**
+  - no longer fails if the user/bot/entity that initiated the action is not a
+    member of one of the specified orgs
+  - adds a boolean output indicating whether they belong to the org
 - **1.0** - Initial release. Nothing has changed yet!
