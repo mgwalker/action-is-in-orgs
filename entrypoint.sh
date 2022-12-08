@@ -15,7 +15,7 @@ INORG=$(echo $?)
 
 if [ "$INORG" -eq "0" ]
 then
-  echo "in_orgs=\"true\"" >> $GITHUB_OUTPUT
+  echo "in_orgs=true" >> $GITHUB_OUTPUT
 else
-  echo "in_orgs=\"false\"" >> $GITHUB_OUTPUT
+  echo "in_orgs=false" >> $GITHUB_OUTPUT
 fi
