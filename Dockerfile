@@ -1,7 +1,7 @@
-FROM stedolan/jq
+FROM ghcr.io/jqlang/jq:1.8.1 AS build
 
 FROM busybox:latest
-COPY --from=0 /usr/local/bin/jq /usr/local/bin/jq
+COPY --from=build /jq /usr/local/bin/jq
 
 COPY ./entrypoint.sh /entrypoint.sh
 
